@@ -23,6 +23,7 @@ defmodule BamboohrBot.MixProject do
 
   defp deps do
     [
+      {:slack, "~> 0.23.5"}
     ]
   end
 end
