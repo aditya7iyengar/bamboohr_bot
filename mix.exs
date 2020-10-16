@@ -23,6 +23,7 @@ defmodule BamboohrBot.MixProject do
 
   defp deps do
     [
+      {:bamboohr_api, "~> 0.0.1"},
       {:slack, "~> 0.23.5"}
     ]
   end
