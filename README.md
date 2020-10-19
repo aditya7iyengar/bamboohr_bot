@@ -8,6 +8,7 @@ BambooHR Slack Bot written in Elixir
 ## Roadmap
 
 - [ ] Clean-up code
+- [ ] Make messages configurable
 - [ ] Increase test coverage
 - [ ] Add CI
 
