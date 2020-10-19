@@ -7,4 +7,10 @@ config :bamboohr_api, BamboohrApi.Config,
 
 config :bamboohr_bot, BamboohrBot.Config,
   token: System.get_env("SLACK_BOT_TOKEN"),
-  channel: System.get_env("SLACK_BOT_CHANNEL")
+  channel: System.get_env("SLACK_BOT_CHANNEL"),
+  pto_message_eex:
+    Path.join([
+      "./priv",
+      "messages",
+      "pto.eex"
+    ])

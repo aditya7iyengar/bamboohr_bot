@@ -21,20 +21,9 @@ defmodule BamboohrBot do
     |> pto_message()
   end
 
-  defp pto_message([]) do
-    """
-    BlockFiers on PTO: 0
-
-    Woah! No one's on PTO today..
-    """
-  end
-
   defp pto_message(people) do
-    """
-    BlockFiers on PTO: #{Enum.count(people)}
-
-    #{Enum.join(people, "\n")}
-    """
+    __MODULE__.Config.pto_message_eex()
+    |> EEx.eval_file(people: people)
   end
 
   ## BOT Behaviour
@@ -65,6 +54,12 @@ defmodule BamboohrBot do
       :bamboohr_bot
       |> Application.get_env(__MODULE__)
       |> Keyword.fetch!(:channel)
+    end
+
+    def pto_message_eex do
+      :bamboohr_bot
+      |> Application.get_env(__MODULE__)
+      |> Keyword.fetch!(:pto_message_eex)
     end
   end
 end

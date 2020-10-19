@@ -1,0 +1,10 @@
+<%= if Enum.count(people) == 0 do %>
+  Employees on PTO: 0
+
+  No one's on PTO today!
+<% else %>
+  Employees on PTO: <%= Enum.count(people) %>
+
+<%= Enum.join(people, "\n") %>
+<% end %>
+
